@@ -1,0 +1,25 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/imgs/liganerdlogo.jpg">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-content class="background">
+  <ion-card class="card-login">
+    <ion-card-content>
+        <img src="assets/imgs/nerdemamiortamanho.png">
+      <ion-item class="card-login-itemform">
+        <ion-label floating>Matricula</ion-label>
+        <ion-input class="card-login-input" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="card-login-itemform">
+        <ion-label floating>Senha</ion-label>
+        <ion-input  class="card-login-input" type="password"></ion-input>
+      </ion-item>
+      <button ion-button block (click)="login()">Entrar</button>
+      <img class="card-login-img"src="assets/imgs/logocriativa.png">
+    </ion-card-content>
+  </ion-card>
+</ion-content>
