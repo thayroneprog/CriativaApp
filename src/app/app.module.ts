@@ -4,6 +4,7 @@ import {HttpModule} from '@angular/http'
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+
 import { NotaPage } from '../pages/about/about';
 import { AgendaPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +14,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
+import { RestApiServiceProvider } from '../providers/rest-api-service/rest-api-service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { LoginPage } from '../pages/login/login';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestApiServiceProvider
   ]
 })
 export class AppModule {}

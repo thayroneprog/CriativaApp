@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { ToastController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { RestApiServiceProvider } from '../../providers/rest-api-service/rest-api-service';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -14,19 +18,21 @@ import { ToastController } from 'ionic-angular';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
+  providers:[RestApiServiceProvider]
 })
-export class LoginPage {
-  
-  var:boolean = true;
-
+export class LoginPage {  
+  var:boolean;
   splash = true;
+  Matricula:any;
+  Senha:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public http: Http, private restApiService:RestApiServiceProvider) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-    setTimeout(() => this.splash = false, 4000);
+    setTimeout(() => this.splash = false, 4000);   
   }
 
   presentToast() {
@@ -43,14 +49,16 @@ export class LoginPage {
     toast.present();
   }
 
-
   login():void{
-    if(this.var == true){
-      this.navCtrl.setRoot(TabsPage);
-    }else{
-      this.presentToast();   
-    }
+    this.restApiService.Login(this.Matricula,this.Senha).subscribe(data => {  
+      if(data){
+        this.navCtrl.setRoot(TabsPage);
+      }else{
+        this.presentToast();   
+      }
+    }, error => {
+      console.log(error);
+      this.presentToast();
+    });   
   }
-  
-
 }
