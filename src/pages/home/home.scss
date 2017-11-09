@@ -1,3 +1,75 @@
-page-home {
+.cabecalho{
+    width: 100%;
+    margin-top: 60px;
+    background-color: red;
+}
 
+.cabecalho h1{
+    color: rgba(53, 120, 184, 0.829);
+    font-size: 36px;
+    margin-bottom: 0px;
+}
+
+.cabecalho h2{
+    color: rgba(53, 120, 184, 0.829);
+    font-size: 26px;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+.cabecalho p{
+    color: rgba(30, 72, 112, 0.829);
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.pull-left{
+    float: left;
+}
+
+.pull-right{
+    float: right;
+
+}
+
+.cabecalho .pull-left {
+    width: 40%; 
+    // padding: 35px 20px;
+    // background-color: green;
+}
+
+.button-circulo{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(53, 120, 184, 0.829);
+}
+
+.cabecalho .pull-right {
+    width: 60%;    
+    height: 100%;
+    text-align: center;   
+    //background-color: yellow;
+}
+
+.cabecalho img{
+    width: 100%;    
+}
+
+.circle-image {
+    border-radius: 50%;
+}
+
+.conteudo {
+    width: 100%;
+    padding: 15px;
+}
+
+.conteudo .menu{
+    width: 100%;
+
+}
+
+.text-area{
+    width: 100%;
 }

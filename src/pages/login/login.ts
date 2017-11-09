@@ -23,9 +23,8 @@ import { RestApiServiceProvider } from '../../providers/rest-api-service/rest-ap
 export class LoginPage {  
   var:boolean;
   splash = true;
-  Matricula:any;
+  public Matricula:any;
   Senha:any;
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public http: Http, private restApiService:RestApiServiceProvider) {
 
   }
@@ -52,7 +51,9 @@ export class LoginPage {
   login():void{
     this.restApiService.Login(this.Matricula,this.Senha).subscribe(data => {  
       if(data){
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(TabsPage,{
+         matricula : this.Matricula 
+        }); 
       }else{
         this.presentToast();   
       }
