@@ -1,40 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { RestApiServiceProvider } from '../../providers/rest-api-service/rest-api-service';
 
-
-
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers:[
+    RestApiServiceProvider
+  ]
 })
-export class HomePage {
- 
-  aluno:any;
+export class HomePage implements OnInit{
 
+  public data:any[];
+  public matricula:string;
   myAboutParam: any;
  
   constructor(public navCtrl: NavController, public http: Http, public navParams:NavParams, private restApiService:RestApiServiceProvider) {
- 
-    // // this.http.get('https://www.reddit.com/r/gifs/new/.json?limit=10').map(res => res.json()).subscribe(data => {
-    // //     this.posts = data.data.children;
-    // // });
-    // console.log(this.user.Matricula);
+  }
+
+  ngOnInit(){
+    
   }
 
   ionViewDidLoad(){
-    this.myAboutParam = this.navParams.get('login');
-    console.log(this.myAboutParam);
-    
-    
+    console.log(this.navParams.get('matricula'));
+    this.matricula = this.navParams.get('matricula');
+    console.log(this.matricula);
     this.buscaAluno();
   }
 
   buscaAluno():void{
-    this.restApiService.NotaAluno().subscribe(data => {
-      this.aluno = data.results;
+    this.restApiService.NotaAluno(this.matricula).subscribe(data => {
+     this.data = data.results; 
       console.log(data);
     },
       error =>{

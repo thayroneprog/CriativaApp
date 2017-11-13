@@ -9,16 +9,17 @@
       <img src="assets/imgs/avatar_padrao.png"class="circle-image"/>
     </div>
     <div class="pull-right">
-      <h1>Thayrone</h1>
-      <h2>Marques</h2>
-      <p>Turma 100</p>
+      <div *ngFor="let item of data">
+        <div item-start>
+          <h2>{{item.NmAluno}}</h2>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="corpo">
-    <div class="menu">
-      <button class="button-circulo pull-right" > <span class="glyphicon glyphicon-th-list"></span></button>
-    </div>
-    
+  <div class="text-area">
+    <textarea id="textarea" placeholder="digite o que vc ta pensando">
+
+    </textarea>
   </div>
 </div>
 

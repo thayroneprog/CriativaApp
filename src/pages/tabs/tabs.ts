@@ -5,14 +5,9 @@ import { AgendaPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { NavParams } from 'ionic-angular';
 
-var mat;
-
-
 @Component({
   templateUrl: 'tabs.html'
 })
-
-
 
 export class TabsPage { 
   
@@ -28,7 +23,6 @@ export class TabsPage {
 
   ionViewDidLoad(){
     this.myTabsParam = this.navParams.get('matricula');
-   
     console.log(this.myTabsParam); 
   }
 }
