@@ -15,6 +15,7 @@ export class HomePage implements OnInit{
 
   public data:any[];
   public matricula:string;
+  public alunoData:any;
   myAboutParam: any;
  
   constructor(public navCtrl: NavController, public http: Http, public navParams:NavParams, private restApiService:RestApiServiceProvider) {
@@ -25,16 +26,16 @@ export class HomePage implements OnInit{
   }
 
   ionViewDidLoad(){
-    console.log(this.navParams.get('matricula'));
     this.matricula = this.navParams.get('matricula');
     console.log(this.matricula);
     this.buscaAluno();
   }
 
   buscaAluno():void{
-    this.restApiService.NotaAluno(this.matricula).subscribe(data => {
-     this.data = data.results; 
-      console.log(data);
+    this.restApiService.NotaAluno().subscribe(data => {
+     this.data = data; 
+     this.alunoData = data;
+      console.log(this.alunoData); 
     },
       error =>{
         console.log(error);

@@ -6,7 +6,7 @@
 
 .cabecalho h1{
     color: rgba(53, 120, 184, 0.829);
-    font-size: 36px;
+    font-size: 30px;
     margin-bottom: 0px;
 }
 
@@ -19,7 +19,7 @@
 
 .cabecalho p{
     color: rgba(30, 72, 112, 0.829);
-    font-size: 18px;
+    font-size: 19px;
     margin-top: 0px;
 }
 
@@ -73,6 +73,19 @@
 .conteudo .text-area{
     width: 100%;
 
+}
+.conteudo .text-area button{
+    background-color: rgba(53, 120, 184, 0.829);
+    color: white;
+    font-size: 18px;
+
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    position: absolute;
+    right: 22px;
+    padding: 8px 14px;
+    opacity: 0.9;
+    top:308px;
 }
 
 .conteudo .text-area textarea{

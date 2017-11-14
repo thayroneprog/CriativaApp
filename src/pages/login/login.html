@@ -11,14 +11,14 @@
     <ion-card-content>
         <img src="assets/imgs/nerdemamiortamanho.png">
       <ion-item class="card-login-itemform">
-        <ion-label floating>Matricula</ion-label>
-        <ion-input class="card-login-input" [value]="Matricula" [(ngModel)]="Matricula" type="text"></ion-input>
+        <ion-input class="card-login-input" [value]="Matricula" [(ngModel)]="Matricula" type="text" placeholder="Matricula"></ion-input>
       </ion-item>
       <ion-item class="card-login-itemform">
-        <ion-label floating>Senha</ion-label>
-        <ion-input  class="card-login-input" [value]="Senha" [(ngModel)]="Senha" type="password"></ion-input>
+        <ion-input  class="card-login-input" [value]="Senha" [(ngModel)]="Senha" type="password"placeholder="Senha"></ion-input>
       </ion-item>
-      <button ion-button block (click)="login()">Entrar</button>
+      <ion-item class="card-login-itemform">
+        <button ion-button block (click)="login()" class="button">Entrar</button>
+      </ion-item>
       <img class="card-login-img"src="assets/imgs/logocriativa.png">
     </ion-card-content>
   </ion-card>

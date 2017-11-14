@@ -9,18 +9,22 @@
       <img src="assets/imgs/avatar_padrao.png"class="circle-image"/>
     </div>
     <div class="pull-right">
-      <div *ngFor="let item of data">
-        <div item-start>
-          <h2>{{item.NmAluno}}</h2>
-        </div>
-      </div>
+      <ion-list>
+        <ion-item *ngFor = "let item of alunoData" >
+          <h1>{{item.NmAluno}}</h1>
+          <h2>Matricula: {{item.Matricula}}</h2>
+          <p>Turma:{{item.Turma}}</p>
+        </ion-item>
+      </ion-list>
     </div>
   </div>
   <div class="text-area">
     <textarea id="textarea" placeholder="digite o que vc ta pensando">
 
     </textarea>
+    <button >Enviar</button>
   </div>
+  
 </div>
 
 

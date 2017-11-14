@@ -1,11 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Notas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+ <table class="table-responsive"> 
+<thead>
+  <tr>
+  <th widht = "25%" class="text-left">S</th>
+  <th widht = "25%" class="text-left">Q</th>
+  <th widht = "25%" class="text-left">%</th>
+  <th widht = "25%" class="text-left">Red.</th>
+  </tr>
+  </thead>
+  <tbody class="table-hover" *ngFor="let item of aluno">
+  <tr>
+    <td class="text-left">{{item.IdAvaliacao}}</td>
+    <td class="text-left">{{item.QtdTotalQuestoes}}</td>
+    <td class="text-left">{{item.PrNota}}</td>
+    <td class="text-left"></td>
+  </tr>
+  </tbody>
+  </table>
+    
 </ion-content>

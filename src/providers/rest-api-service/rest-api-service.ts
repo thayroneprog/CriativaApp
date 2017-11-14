@@ -13,7 +13,7 @@ export class RestApiServiceProvider {
     return this.http.get("http://criativaws.gerenciarsc.com.br/api/Aluno/Autentica/?Matricula="+Matricula+"&Senha="+Senha+"").map(res => res.json());
   }
   
-  NotaAluno(Matricula){
-    return this.http.get("http://criativaws.gerenciarsc.com.br/api/aluno/ListarAlunoNota?Matricula="+Matricula+"").map(res => res.json());
+  NotaAluno(){
+    return this.http.get("http://criativaws.gerenciarsc.com.br/api/aluno/ListarAlunoNota?Matricula=1229").map(res => res.json());
   }
 }
