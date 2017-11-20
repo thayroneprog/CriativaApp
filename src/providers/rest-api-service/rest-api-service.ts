@@ -16,4 +16,8 @@ export class RestApiServiceProvider {
   NotaAluno(){
     return this.http.get("http://criativaws.gerenciarsc.com.br/api/aluno/ListarAlunoNota?Matricula=1229").map(res => res.json());
   }
+
+  ListaFeed(){
+    return this.http.get("http://localhost:50039/API/feed/listarfeed").map(res => res.json());
+  }
 }

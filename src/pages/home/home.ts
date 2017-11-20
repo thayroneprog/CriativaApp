@@ -14,6 +14,7 @@ import { RestApiServiceProvider } from '../../providers/rest-api-service/rest-ap
 export class HomePage implements OnInit{
 
   public data:any[];
+  public feed: any[];
   public matricula:string;
   public alunoData:any;
   myAboutParam: any;
@@ -29,6 +30,7 @@ export class HomePage implements OnInit{
     this.matricula = this.navParams.get('matricula');
     console.log(this.matricula);
     this.buscaAluno();
+    this.listaFeed();
   }
 
   buscaAluno():void{
@@ -36,6 +38,16 @@ export class HomePage implements OnInit{
      this.data = data; 
      this.alunoData = data;
       console.log(this.alunoData); 
+    },
+      error =>{
+        console.log(error);
+      });
+  }
+
+  listaFeed(){
+    this.restApiService.ListaFeed().subscribe(data =>{
+      this.feed = data;
+      console.log(this.feed);
     },
       error =>{
         console.log(error);
