@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { RestApiServiceProvider } from '../providers/rest-api-service/rest-api-service';
+import { TimelineComponent, TimelineItemComponent, TimelineTimeComponent } from '../components/timeline/timeline';
 
 
 
@@ -22,11 +23,13 @@ import { RestApiServiceProvider } from '../providers/rest-api-service/rest-api-s
   declarations: [
     MyApp,
     NotaPage,
-    
     AgendaPage,
     HomePage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    TimelineComponent,
+    TimelineItemComponent,
+    TimelineTimeComponent
   ],
   imports: [
     BrowserModule,
