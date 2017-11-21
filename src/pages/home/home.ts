@@ -39,6 +39,7 @@ export class HomePage implements OnInit{
   myAboutParam: any;
  
   constructor(public navCtrl: NavController, public http: Http, public navParams:NavParams, private restApiService:RestApiServiceProvider) {
+    this.doRefresh(0);
   }
 
   ngOnInit(){
@@ -49,7 +50,6 @@ export class HomePage implements OnInit{
     this.matricula = this.navParams.get('matricula');
     console.log(this.matricula);
     this.buscaAluno();
-    this.listaFeed();
   }
 
   buscaAluno():void{
@@ -63,14 +63,27 @@ export class HomePage implements OnInit{
       });
   }
 
-  listaFeed(){
+  // listaFeed(){
+  //   this.restApiService.ListaFeed().subscribe(data =>{
+  //     this.feed = data;
+  //     console.log(this.feed);
+  //   },
+  //     error =>{
+  //       console.log(error);
+  //     });
+  // }
+
+  doRefresh(refresher){
     this.restApiService.ListaFeed().subscribe(data =>{
       this.feed = data;
       console.log(this.feed);
+      if(refresher != 0)
+        refresher.complete();
     },
       error =>{
         console.log(error);
       });
+    
   }
  
 }

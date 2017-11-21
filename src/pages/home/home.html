@@ -4,6 +4,14 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content 
+      pullingText="Pull to refresh"
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles"
+      refreshingText="..fetching">
+    </ion-refresher-content>
+ </ion-refresher>
   <timeline endIcon="call">
     <timeline-item *ngFor="let item of feed">
       <ion-card>
@@ -14,13 +22,9 @@
           <h2>{{item.NmAluno}}</h2>
           <p>{{item.DatePart}}, {{item.TimePart}}</p>
         </ion-item>
-      
-       
-      
         <ion-card-content>
           <p>{{item.DsConteudo}}</p>
         </ion-card-content>
-      
         <ion-row>
           <ion-col>
             <!-- <button ion-button icon-left clear small>
@@ -40,7 +44,6 @@
             </ion-note>
           </ion-col>
         </ion-row>
-      
       </ion-card>
     </timeline-item>
   </timeline>
